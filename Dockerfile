@@ -27,6 +27,9 @@ RUN npm run build
 #set base engine for serving the application
 FROM nginx
 
+# expose nginx port
+EXPOSE 80
+
 # copy result from the building face
 COPY --from=builder /app/build /usr/share/nginx/html
 
